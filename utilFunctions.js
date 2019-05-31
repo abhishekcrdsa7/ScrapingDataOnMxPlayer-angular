@@ -12,7 +12,7 @@ const funcs = {
   },
   modifyShowsArray(shows) {
     for(let i = 0; i < shows.length;i++){
-      shows[i].webUrl = 'https://www.mxplayer.in'+shows[i].webUrl;
+      shows[i].webUrl = shows[i].webUrl;
       shows[i] = _.pick(shows[i], ['title', 'type', 'releaseDate', 'webUrl', 'image']);
     }
     return shows;
