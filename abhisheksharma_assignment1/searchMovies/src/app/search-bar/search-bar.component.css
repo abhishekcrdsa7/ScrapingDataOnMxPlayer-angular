@@ -1,0 +1,9 @@
+.list-group {
+  position: absolute;
+  z-index: 999;
+}
+
+.list-group-item:hover {
+  cursor: pointer;
+  background-color: #f9fafc;
+}

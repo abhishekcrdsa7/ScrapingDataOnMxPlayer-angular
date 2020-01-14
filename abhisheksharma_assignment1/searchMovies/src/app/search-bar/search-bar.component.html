@@ -1,0 +1,27 @@
+<div class="col-xs-12">
+    <form #f="ngForm" (ngSubmit)="onSubmit(i.value)">
+      <div class="input-group">
+        <input
+          #i="ngModel"
+          type="text"
+          class="form-control"
+          placeholder="Search Movies..."
+          name="searchquery"
+          (keydown)="autoCmp(i.value)"
+          value={{inp}}
+          autocomplete="off"
+          required
+          [ngModel]>
+        <span class="input-group-btn">
+        <button
+          class="btn btn-default"
+          type="submit"
+          [disabled]="!i.valid"
+        >Go!</button>
+      </span>
+      </div>
+      <ul class="list-group col-xs-12" *ngIf="showList">
+        <li class="list-group-item" #l (click)="onSubmit(l.innerText)" *ngFor="let movie of autoCmpList">{{movie["MovieName"]}}</li>
+      </ul>
+    </form>
+</div>
